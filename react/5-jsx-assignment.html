@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSX Assignments</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- Using React 18 and ReactDOM.createRoot() to render UI -->
+    <div id="root"></div>
+    <!-- 3. Tao ul:
+        <ul>
+        <li>JS</li>
+        <li>React</li>
+        </ul>
+    </div> -->
+
+    <script type="text/babel">
+      const courses = [
+        {
+          name: "HTML,CSS",
+        },
+        {
+          name: "Responsive web design",
+        },
+        {
+          name: "ReactJS",
+        },
+      ];
+      const ul = (
+        <ul>
+          {courses.map((course) => {
+            return <li>{course.name}</li>;
+          })}
+        </ul>
+      );
+
+      const root = document.getElementById("root");
+      ReactDOM.render(ul, root);
+    </script>
+  </body>
+</html>

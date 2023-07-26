@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Props</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      // Using destructuring to call props
+      // {image, title, description, pulishedAt, callback}
+      function PostItem(props) {
+        props.callback(Math.random());
+        return (
+          <div className="post-item">
+            <img src={props.image} alt={props.title} />
+            <h2 className="post-title">{props.title}</h2>
+            <p className="post-desc">{props.description}</p>
+            <p className="post-published">{props.publishedAt}</p>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div className="post-list">
+            <PostItem
+              title="React Function Component"
+              image="https://i.ytimg.com/vi/Cla1WwguArA/maxresdefault.jpg"
+              description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
+              porro!"
+              publishedAt="2 hours ago"
+              callback={(random) => {
+                console.log(random);
+              }}
+            />
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

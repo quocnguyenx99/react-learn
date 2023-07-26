@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+    ></script>
+  </head>
+  <body>
+    <h1>Add React to website</h1>
+    <!-- 
+        1. React.creatElement() => React element
+        2. So sanh voi document.createElement() -> DOM element
+        3. Tao ul:
+        <ul>
+            <li>JS</li>
+            <li>React</li>
+        </ul>
+        
+        4. Tao:
+        <div class="post-item">
+            <h2 title="Learing React in F8">Learing React</h2>
+            <p>Learning React from basic to advance</p>
+        </div>
+     -->
+
+    <script>
+      // DOM
+      const divDom = document.createElement("div");
+      divDom.className = "post-item";
+
+      const h2Dom = document.createElement("h2");
+      h2Dom.title = "Learing React in F8";
+      h2Dom.innerText = "Learing React";
+
+      const pDom = document.createElement("p");
+      pDom.innerText = "Learning React from basic to advance";
+
+      divDom.appendChild(h2Dom);
+      divDom.appendChild(pDom);
+
+      document.body.appendChild(divDom);
+
+      // React
+      // React.createElement(type, props, children,n)
+
+      const divReact = React.createElement(
+        "div",
+        {
+          className: "post-item",
+        },
+        React.createElement(
+          "h2", // type
+          {
+            title: "Learing React in F8", // props
+          },
+          "Learing React" // children
+        ),
+        React.createElement("p", null, "Learning React from basic to advance")
+      );
+
+      console.log(divReact);
+    </script>
+  </body>
+</html>

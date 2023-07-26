@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Component Assignments</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      function PostItem() {
+        return (
+          <div className="post-item">
+            <img
+              src="https://i.ytimg.com/vi/Cla1WwguArA/maxresdefault.jpg"
+              alt="react-fucntion-component"
+            />
+            <h2 className="post-title">React Function Component</h2>
+            <p className="post-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
+              porro!
+            </p>
+            <p className="post-published">2 hours ago</p>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div className="post-list">
+            <PostItem />
+            <PostItem />
+            <PostItem />
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

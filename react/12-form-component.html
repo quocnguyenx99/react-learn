@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Component</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      // const Form = {
+      //   Input() {
+      //     return <input />;
+      //   },
+      //   Checkbox() {
+      //     return <input type="checkbox" />;
+      //   },
+      // };
+
+      function Button({ title, href, onClick }) {
+        let Component = "button";
+        let props = {};
+        if (href) {
+          Component = "a";
+          props.href = href;
+        }
+        if (onClick) {
+          props.onClick = onClick;
+        }
+
+        return <Component {...props}>{title}</Component>;
+      }
+
+      function App() {
+        // const type = "Checkbox";
+        // const Component = Form[type]; => <Component/>
+        return (
+          <div className="wrapper">
+            <Button
+              title="Click me!"
+              href="https://fullstack.edu.vn/learning/reactjs?id=74e218c5-6f03-48fd-9517-87b676029ea6"
+              onClick={() => console.log(Math.random())}
+            />
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

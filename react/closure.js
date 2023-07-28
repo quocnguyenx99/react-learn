@@ -64,6 +64,7 @@ console.log(localStorage["profile_setting"]);
 console.log(ProfileSetting.get("konichiwa"));
 ProfileSetting.set("konichiwa", "sensei");
 
+
 // Create CarList
 // function createApp() {
 //   const cars = [];
